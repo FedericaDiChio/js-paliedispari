@@ -16,7 +16,7 @@ Dichiariamo chi ha vinto. */
 */
 
 // Get HTML Element 
-var evenOdd = document.getElementById("even-odd");
+var evenOddDisplay = document.getElementById("even-odd");
 
 // Variables to collect data 
 var userChoice = prompt("Pari o dispari?");
@@ -26,38 +26,38 @@ console.log(userNumber)
 
 
 // function to get a random number 
-function cpuRandom(number) {
-    var number = Math.floor(Math.random() * 5) + 1;
-    return number;
+function cpuRandom(max, min) {
+    var min = 1;
+    var max = 6;
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
-console.log(cpuRandom())
+var random = cpuRandom();
+console.log(random);
 
-// var random = cpuRandom();
+
 
 // get the sum 
-var sum = userNumber + cpuRandom();
+var sum = userNumber + random;
 console.log("Questa è la somma: ", sum);
 
 
-
-// // function to estabilish if is even or odd 
-// function isEven(number) {
-//     if (number % 2 === 0) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
+// function to estabilish if is even or odd 
+function isEven(number) {
+    if (number % 2 === 0) {
+        return "pari";
+    } else {
+        return "dispari";
+    }
+}
 
 
-// // Print in page 
-// var result = isEven(sum);
-// evenOdd.innerHTML = "Il tuo numero è pari:" + result;
+// Print in page 
+var result = isEven(sum);
 
-// if (userChoice === result) {
-//     console.log("Hai vinto")
-// } else  {
-//     console.log("Hai perso")
-// }
+if (userChoice.toLowerCase() == result) {
+    evenOddDisplay.innerHTML = "Hai vinto!"
+   
+} else  {
+    evenOddDisplay.innerHTML = "Hai perso!"
+}
