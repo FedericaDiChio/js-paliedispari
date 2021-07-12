@@ -20,14 +20,6 @@ var userWord = prompt("Inserisci una parola")
 
 // Function to estabilish if is true or false
 function isPalindrome (word) {
-   var reversed = word.split("").reverse().join("");
-   if (word === reversed) {
-       return true;
-    } else {
-       return false;
-    } 
-}
 
-// Print in page
-palindromeElement.innerHTML = userWord + ": " + isPalindrome(userWord);
+}
 
