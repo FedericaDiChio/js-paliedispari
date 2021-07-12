@@ -16,7 +16,7 @@ Dichiariamo chi ha vinto. */
 */
 
 // Get HTML Element 
-var evenOddDisplay = document.getElementById("even-odd");
+var evenOddElement = document.getElementById("even-odd");
 
 // Variables to collect data 
 var userChoice = prompt("Pari o dispari?");
@@ -54,10 +54,11 @@ function isEven(number) {
 
 // Print in page 
 var result = isEven(sum);
+var message = "La scelta del pc è: " + random + ". ";
 
 if (userChoice.toLowerCase() == result) {
-    evenOddDisplay.innerHTML = "Hai vinto!"
-   
+    evenOddElement.innerHTML = message + "Hai vinto!"
+  
 } else  {
-    evenOddDisplay.innerHTML = "Hai perso!"
+    evenOddElement.innerHTML =  message + "Hai perso!"
 }
