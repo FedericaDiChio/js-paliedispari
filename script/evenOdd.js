@@ -19,20 +19,26 @@ Dichiariamo chi ha vinto. */
 var evenOddElement = document.getElementById("even-odd");
 
 // Variables to collect data 
-var userChoice = prompt("Pari o dispari?");
-var userNumber = parseInt(prompt("Scegli un numero da 1 a 5")); 
+var userChoice = prompt("pari o dispari?");
+var userNumber; 
 console.log(userChoice)
-console.log(userNumber)
 
-
-// function to get a random number 
-function cpuRandom(max, min) {
-    var min = 1;
-    var max = 6;
-    return Math.floor(Math.random() * (max - min) + min);
+// Validation 
+while (userChoice.toLowerCase().trim() !== "pari" && userChoice.toLowerCase().trim() !== "dispari") {
+    userChoice = prompt("pari o dispari?")
 }
 
-var random = cpuRandom();
+while (isNaN(userNumber) || userNumber < 1 || userNumber > 5) {
+    userNumber = parseInt(prompt("Scegli un numero da 1 a 5")); 
+    console.log(userNumber)
+}
+
+// function to get a random number 
+function cpuRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var random = cpuRandom(1,5);
 console.log(random);
 
 
@@ -53,6 +59,7 @@ function isEven(number) {
 
 
 // Print in page 
+
 var result = isEven(sum);
 var message = "La scelta del pc è: " + random + ". ";
 
