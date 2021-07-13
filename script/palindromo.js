@@ -20,6 +20,15 @@ var userWord = prompt("Inserisci una parola")
 
 // Function to estabilish if is true or false
 function isPalindrome (word) {
-
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] == word[word.length - 1]) {
+            return true;
+        } else {
+            return false;
+        }
+    }    
 }
+
+// Print in page
+palindromeElement.innerHTML = userWord + ": " + isPalindrome(userWord);
 
