@@ -52,9 +52,8 @@ console.log("Questa è la somma: ", sum);
 function isEven(number) {
     if (number % 2 === 0) {
         return "pari";
-    } else {
-        return "dispari";
-    }
+    } 
+    return "dispari";
 }
 
 
