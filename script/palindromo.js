@@ -18,18 +18,30 @@ var palindromeElement = document.getElementById("palindrome")
 // Variable to collect data
 var userWord = prompt("Inserisci una parola") 
 
-// Function to estabilish if is true or false
+// Function to estabilish if is true or false (REVERSE)
 function isPalindrome (word) {
-    var reverseWord = "";
-    for (var i = word.length - 1; i >= 0; i--) {
-      var currentLetter = word[i];
-      reverseWord += currentLetter;
-    }    
-    if (reverseWord === word) {
+    var reversed = word.split("").reverse().join("");
+    if (word === reversed) {
         return true;
-    }
-    return false;
+    } else {
+        return false;
+    } 
 }
+
+// Function to estabilish if is true or false (FOR)
+
+// function isPalindrome (word) {
+//     var reverseWord = "";
+//     for (var i = word.length - 1; i >= 0; i--) {
+//       var currentLetter = word[i];
+//       reverseWord += currentLetter;
+//     }    
+//     if (reverseWord === word) {
+//         return true;
+//     }
+//     return false;
+// }
+
 
 // Print in page
 palindromeElement.innerHTML = userWord + ": " + isPalindrome(userWord);
